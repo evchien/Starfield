@@ -46,9 +46,9 @@ class ShootingStar extends Particle{ //oddball
     myColor = color(255,247,0);
   }
   void show(){
-    noStroke();
-    fill(myColor);
-    ellipse((float)myX, (float)myY, 15, 15);
+    //noStroke();
+    //fill(myColor);
+    //ellipse((float)myX, (float)myY, 15, 15);
     image(img, (float)myX, (float)myY);
   }
 } //end of oddball class
