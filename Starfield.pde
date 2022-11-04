@@ -51,12 +51,12 @@ class ShootingStar extends Particle{ //oddball
 } //end of Oddball class
 
 Particle [] bob;
-ShootingStar evie;
+//ShootingStar evie;
 
 void setup(){
   size(400,400);
   bob = new Particle[500];
-  evie = new ShootingStar();
+  //evie = new ShootingStar();
   for(int i = 0; i < bob.length; i++){
     bob[i] = new ShootingStar();
   }
@@ -118,13 +118,13 @@ class ShootingStar extends Particle{ //oddball
 } //end of Oddball class
 
 Particle [] bob;
-ShootingStar evie;
+//ShootingStar evie;
 
 void setup(){
   size(400,400);
   img = loadImage("star.png");
   bob = new Particle[500];
-  evie = new ShootingStar();
+  //evie = new ShootingStar();
   for(int i = 0; i < bob.length; i++){
     bob[i] = new ShootingStar();
   }
