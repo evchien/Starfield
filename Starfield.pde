@@ -64,6 +64,14 @@ void setup(){
     bob[i] = new Particle();
   }
 }
+void draw(){
+  background(0);
+  for(int i = 0; i < bob.length; i++){
+    bob[i].edge();
+    bob[i].move();
+    bob[i].show();
+  }
+}
 
 /*PImage img;
 
@@ -132,8 +140,6 @@ void setup(){
     bob[i] = new Particle();
   }
 }
-*/
-
 void draw(){
   background(0);
   for(int i = 0; i < bob.length; i++){
@@ -142,3 +148,4 @@ void draw(){
     bob[i].show();
   }
 }
+*/
