@@ -1,9 +1,9 @@
 PImage img;
+
 class Particle{
   double myX, myY, myAngle, mySpeed, mySize;
   int myColor;
   Boolean edge;
-  //PImage img;
   Particle(){ //default no argument constructor
     myX = 200;
     myY = 200;
@@ -35,7 +35,7 @@ class Particle{
     else
       edge = false;
   }
-} //end of Cloud class
+} //end of Particle class
 
 class ShootingStar extends Particle{ //oddball
   ShootingStar(){
@@ -45,20 +45,33 @@ class ShootingStar extends Particle{ //oddball
     mySpeed = Math.random()+50;
     myColor = color(255,247,0);
   }
+  void move(){
+    if(edge == false){
+      myY = myY + (Math.sin(myAngle)*mySpeed);
+      myX = myX + (Math.cos(myAngle)*mySpeed);
+    }
+  }
   void show(){
-    //noStroke();
-    //fill(myColor);
-    //ellipse((float)myX, (float)myY, 15, 15);
     image(img, (float)myX, (float)myY);
   }
-} //end of oddball class
+  void edge(){
+    if(myY > height || myX > width){
+      edge = true;
+      myY = 200;
+      myX = 200;
+      mySpeed = Math.random()*2.5;
+      myAngle = Math.random()*2*PI;
+    }
+    else
+      edge = false;
+  }
+} //end of Oddball class
 
 Particle [] bob;
 ShootingStar evie;
 
 void setup(){
   size(400,400);
-  //PImage img = loadImage("star.png");
   img = loadImage("star.png");
   bob = new Particle[500];
   evie = new ShootingStar();
