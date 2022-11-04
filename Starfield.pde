@@ -3,17 +3,17 @@ PImage img;
 class Particle{
   double myX, myY, myAngle, mySpeed, mySize;
   int myColor;
-  Boolean edge;
+  Boolean distance;
   Particle(){ //default no argument constructor
     myX = 200;
     myY = 200;
     myAngle = Math.random()*2*PI;
     mySpeed = Math.random()*5+2;
     myColor = color(252,245,99);
-    edge = false;
+    distance = false;
   }
   void move(){
-    if(edge == false){
+    if(distance == false){
       myY = myY + (Math.sin(myAngle)*mySpeed);
       myX = myX + (Math.cos(myAngle)*mySpeed);
     }
@@ -26,14 +26,14 @@ class Particle{
   }
   void edge(){
     if(myY > height || myX > width){
-      edge = true;
+      distance = true;
       myY = 200;
       myX = 200;
       mySpeed = Math.random()*2.5;
       myAngle = Math.random()*2*PI;
     }
     else
-      edge = false;
+      distance = false;
   }
 } //end of Cloud class
 
