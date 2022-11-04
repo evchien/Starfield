@@ -45,25 +45,8 @@ class ShootingStar extends Particle{ //oddball
     mySpeed = Math.random()+50;
     myColor = color(255,247,0);
   }
-  void move(){
-    if(edge == false){
-      myY = myY + (Math.sin(myAngle)*mySpeed);
-      myX = myX + (Math.cos(myAngle)*mySpeed);
-    }
-  }
   void show(){
     image(img, (float)myX, (float)myY);
-  }
-  void edge(){
-    if(myY > height || myX > width){
-      edge = true;
-      myY = 200;
-      myX = 200;
-      mySpeed = Math.random()*2.5;
-      myAngle = Math.random()*2*PI;
-    }
-    else
-      edge = false;
   }
 } //end of Oddball class
 
